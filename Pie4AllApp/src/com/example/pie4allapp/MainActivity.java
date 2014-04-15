@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -24,11 +25,11 @@ public class MainActivity extends Activity {
 		
 		Spinner spinner = (Spinner) findViewById(R.id.categories);
 			String [] categories = PieData.getArray(); 
-			ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+			ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(this,
 					android.R.layout.simple_spinner_item, categories);
-			dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-			spinner.setAdapter(dataAdapter);
-		
+			dataAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+			spinner.setAdapter(dataAdapter1);	
+			
 	}
 
     

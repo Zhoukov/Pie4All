@@ -11,8 +11,7 @@
     android:layout_height="wrap_content"
     android:background="@android:drawable/btn_dropdown"
     android:spinnerMode="dropdown" />
-    
-    
+
     
   </RelativeLayout>
   
