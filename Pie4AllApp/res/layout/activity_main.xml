@@ -3,7 +3,7 @@
     android:id="@android:id/tabhost"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/white"  >
+    android:background="@color/white" >
      
 <Spinner
     android:id="@+id/categories"
@@ -12,14 +12,14 @@
     android:background="@android:drawable/btn_dropdown"
     android:spinnerMode="dropdown" />
 
-<TextView
-    android:id="@+id/textView1"
-    android:layout_width="wrap_content"
+<ListView
+    android:id="@+id/listView1"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentRight="true"
     android:layout_below="@+id/categories"
-    android:layout_marginTop="32dp" />
+    android:layout_centerHorizontal="true" >
+
+</ListView>
     
 </RelativeLayout>
   

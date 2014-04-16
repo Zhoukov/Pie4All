@@ -43,7 +43,7 @@ public class PieData
 		products.put("Bruidstaarten", bruidstaarten );
 		
 		productInfo.put("Chocolade bruidstaart", "Drie lagen vloeibare chocola" );
-		productInfo.put("Aardbei bruidstaart", "Vier lagen alléén maar aardbei" );
+		productInfo.put("Aardbei bruidstaart", "Vier lagen alleen maar aardbei" );
 		
 		
 		String[] verjaardagstaarten = { "Slagroomtaart", "Kwarktaart" };
