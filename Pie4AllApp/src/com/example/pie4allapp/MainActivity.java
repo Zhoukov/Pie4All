@@ -11,18 +11,19 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 
-public class MainActivity extends Activity implements OnItemSelectedListener {
+public class MainActivity extends Activity  implements OnItemSelectedListener {
 
 	
 Spinner spinner;
 TextView categorie;
+PieData pieData;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		
+		pieData = PieData.getInstance();
 		Spinner spinner = (Spinner) findViewById(R.id.categories);
 			String [] categories = PieData.getArray(); 
 			categorie = (TextView) findViewById(R.id.textView1);
@@ -37,10 +38,41 @@ TextView categorie;
 			 
 			 public void onItemSelected(AdapterView<?> parent, View view, int position,
 					   long id) {
-				 	  spinner.setSelection(position);
-					  String soort = (String) spinner.getSelectedItem();
-					  categorie.setText(soort);
+				 String text = "";
+				 switch(position){
+				 case 0: //Vlaaien
+					 System.out.println("Vlaai");
+					 
+					 text = "";
+					 for(String s : pieData.getProducts("Vlaaien"))
+						 text +=s+"\n";
+					 categorie.setText(text);					 
+					 break;
+				 case 1: //Cakes
+					 System.out.println("cake");
+					 text = "";
+					 for(String s : pieData.getProducts("Cakes"))
+						 text +=s+"\n";
+					 categorie.setText(text);
+					 break;
+				 case 2: //Bruidstaarten
+					 System.out.println("btaart");
+					 text = "";
+					 for(String s : pieData.getProducts("Bruidstaarten"))
+						 text +=s+"\n";
+					 categorie.setText(text);
+					 break;
+				 case 3: //Verjaardagstaarten
+					 System.out.println("vtaart");
+					 text = "";
+					 for(String s : pieData.getProducts("Verjaardagstaarten"))
+						 text +=s+"\n";
+					 categorie.setText(text);
+					 break;
 					 }
+				 
+				 
+				 }
 
 					 @Override
 					 public void onNothingSelected(AdapterView<?> arg0) {
