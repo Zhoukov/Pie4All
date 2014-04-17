@@ -18,6 +18,7 @@ TextView titel;
 TextView detail;
 Button bestellen;
 EditText invoernr;
+Button annuleren;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -40,24 +41,35 @@ EditText invoernr;
 		bestellen = (Button) findViewById(R.id.bestellen);
 		bestellen.setOnClickListener(this);
 			
-		
-			
+		annuleren = (Button) findViewById(R.id.annuleren);
+		annuleren.setOnClickListener(this);
 	}
 	
 
 	@Override
     public void onClick(View v) {
       
+        switch(v.getId()){
+        case R.id.bestellen:
+    		System.out.println(invoernr.getText().toString());
+    		
+    		Intent i = new Intent(DetailView.this, CustomerInfo.class);
+    		i.putExtra("hoeveelheid", (String)invoernr.getText().toString());
+    		i.putExtra("product", (String)selectedProduct);
+    		startActivity(i);
+
+    		finish();
+        break;
+        case R.id.annuleren:
+        	Intent j = new Intent(DetailView.this, MainActivity.class);
+        	startActivity(j);
+        	
+        	finish();
+        break;
+    }
 		//invoernr.getText().toString();
 		
-		System.out.println(invoernr.getText().toString());
-		
-		Intent i = new Intent(DetailView.this, CustomerInfo.class);
-		i.putExtra("hoeveelheid", (String)invoernr.getText().toString());
-		i.putExtra("product", (String)selectedProduct);
-		startActivity(i);
 
-		finish();
 		
 		
     }
