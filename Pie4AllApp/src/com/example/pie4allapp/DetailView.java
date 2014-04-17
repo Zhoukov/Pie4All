@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class DetailView extends Activity implements OnClickListener{
@@ -16,14 +17,15 @@ String selectedProduct;
 TextView titel;
 TextView detail;
 Button bestellen;
+EditText invoernr;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detail);
 		
-		Intent myIntent = getIntent();
-		selectedProduct = myIntent.getStringExtra("selectedProduct");
+		Intent detailview = getIntent();
+		selectedProduct = detailview.getStringExtra("selectedProduct");
 		
 		System.out.println("Detailview: Selected product: "+selectedProduct);
 		
@@ -33,11 +35,35 @@ Button bestellen;
 		detail = (TextView) findViewById(R.id.detail);
 		detail.setText(PieData.getInstance().getProductInfo(selectedProduct));
 		
+		invoernr = (EditText) findViewById(R.id.invoernr);
+		
 		bestellen = (Button) findViewById(R.id.bestellen);
+		bestellen.setOnClickListener(this);
+			
+		
 			
 	}
 	
 
+	@Override
+    public void onClick(View v) {
+      
+		//invoernr.getText().toString();
+		
+		System.out.println(invoernr.getText().toString());
+		
+		Intent i = new Intent(DetailView.this, CustomerInfo.class);
+		i.putExtra("hoeveelheid", (String)invoernr.getText().toString());
+		i.putExtra("product", (String)selectedProduct);
+		startActivity(i);
+
+		finish();
+		
+		
+    }
+	
+	
+	
 
 	@Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
@@ -78,13 +104,8 @@ Button bestellen;
 	}
 
 
-
-	@Override
-	public void onClick(View v) {
-		
-		
-		
-	}
+	
+	
 
 }
 	

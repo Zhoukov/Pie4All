@@ -41,7 +41,7 @@
         android:text="Aantal :" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/invoernr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/aantal"

@@ -37,7 +37,15 @@
 		 <activity
             android:name="com.example.pie4allapp.DetailView"
             android:label="@string/app_name" >
-        </activity>   
+        </activity>  
+        
+		 
+<!-- CustomerInfo --> 
+		<activity
+		    android:name="com.example.pie4allapp.CustomerInfo"
+		    android:label="@string/app_name" >
+	    </activity>
+		 
     </application>
 
 </manifest>
