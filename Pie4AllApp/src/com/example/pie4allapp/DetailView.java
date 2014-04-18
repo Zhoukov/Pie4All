@@ -16,7 +16,7 @@ public class DetailView extends Activity implements OnClickListener{
 String selectedProduct;
 TextView titel;
 TextView detail;
-Button bestellen;
+Button bevestigen;
 EditText invoernr;
 Button annuleren;
 	
@@ -38,19 +38,27 @@ Button annuleren;
 		
 		invoernr = (EditText) findViewById(R.id.invoernr);
 		
-		bestellen = (Button) findViewById(R.id.bestellen);
-		bestellen.setOnClickListener(this);
+		bevestigen = (Button) findViewById(R.id.bevestigen);
+		bevestigen.setOnClickListener(this);
 			
 		annuleren = (Button) findViewById(R.id.annuleren);
 		annuleren.setOnClickListener(this);
+		
+		String[] prefs = Preferences.getInstance(this).getDetailViewPreferences();
+		if(prefs[1] != null)
+			selectedProduct = prefs[1];
+		if(prefs[0] != null)	
+			invoernr.setText(prefs[0]);			
 	}
 	
 
 	@Override
     public void onClick(View v) {
-      
+		String[] newprefs = { ""+(String)invoernr.getText().toString(), ""+(String)selectedProduct };
+		Preferences.getInstance(this).updateDetailViewPreferences(newprefs);
+		
         switch(v.getId()){
-        case R.id.bestellen:
+        case R.id.bevestigen:
     		System.out.println(invoernr.getText().toString());
     		
     		Intent i = new Intent(DetailView.this, CustomerInfo.class);

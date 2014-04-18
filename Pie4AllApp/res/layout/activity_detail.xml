@@ -21,16 +21,6 @@
         android:layout_marginTop="100dp"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <TextView
-        android:id="@+id/aantal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bestellen"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="50dp"
-        android:layout_marginLeft="30dp"
-        android:text="Aantal :" />
-
     <EditText
         android:id="@+id/invoernr"
         android:layout_width="wrap_content"
@@ -45,13 +35,13 @@
     </EditText>
 
     <Button
-        android:id="@+id/bestellen"
+        android:id="@+id/bevestigen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="85dp"
-        android:text="Bestellen" />
+        android:text="Bevestigen" />
 
     <Button
         android:id="@+id/annuleren"
@@ -62,5 +52,15 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="23dp"
         android:text="Annuleren" />
+
+    <TextView
+        android:id="@+id/aantal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bevestigen"
+        android:layout_alignLeft="@+id/detail"
+        android:layout_marginBottom="36dp"
+        android:layout_marginLeft="18dp"
+        android:text="Aantal :" />
 
 </RelativeLayout>

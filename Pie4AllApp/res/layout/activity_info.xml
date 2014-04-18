@@ -15,16 +15,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/naam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:hint="Naam"
-        android:inputType="textPersonName" />
-
-    <EditText
         android:id="@+id/telefoon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,5 +46,36 @@
         android:ems="10"
         android:hint="Adres"
         android:inputType="textPostalAddress" />
+
+    <EditText
+        android:id="@+id/naam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="54dp"
+        android:ems="10"
+        android:hint="Naam"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/annuleren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="14dp"
+        android:text="Annuleren" />
+
+    <Button
+        android:id="@+id/bestellen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/annuleren"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="14dp"
+        android:text="Bevestigen" />
 
 </RelativeLayout>

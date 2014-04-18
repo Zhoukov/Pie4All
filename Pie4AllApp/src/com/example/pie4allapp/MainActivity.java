@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -23,6 +24,8 @@ Spinner spinner;
 ListView categorie;
 PieData pieData;
 ArrayList<String> productList = new ArrayList<String>();
+//static EditText ipadres;
+//static EditText port;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,23 @@ ArrayList<String> productList = new ArrayList<String>();
 			spinner.setAdapter(dataAdapter);
 			spinner.setOnItemSelectedListener(this);
 			categorie.setOnItemClickListener(this);
+			
+//			ipadres = (EditText) findViewById(R.id.ipadres);
+//			ipadres.setText("94.211.183.172");
+//			
+//			port = (EditText) findViewById(R.id.port);
+//			port.setText(4444);
+			
+			
+			
+			
+			if(Preferences.getInstance(this) == null)
+				System.out.println("no instance of preferences");
+		String[] pref = Preferences.getInstance(this).getMainActivityPreferences();
+		if(pref[0] != null)
+			spinner.setSelection(Integer.parseInt(pref[0]));
+		
+		
 	}
 		
 			 
@@ -49,6 +69,8 @@ ArrayList<String> productList = new ArrayList<String>();
 			 public void onItemSelected(AdapterView<?> parent, View view, int position,
 					   long id) {
 				 
+				 String[] loc = { ""+position };
+				 Preferences.getInstance(this).updateMainActivityPreferences(loc);
 				 
 				 switch(position){
 				 case 0: //Vlaaien

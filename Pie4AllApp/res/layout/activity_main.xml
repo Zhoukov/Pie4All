@@ -1,6 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@android:id/tabhost"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/white" >
@@ -17,9 +16,32 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_below="@+id/categories"
-    android:layout_centerHorizontal="true" >
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="70dp" >
 
 </ListView>
+
+<EditText
+    android:id="@+id/port"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignBaseline="@+id/ipadres"
+    android:layout_alignBottom="@+id/ipadres"
+    android:layout_toRightOf="@+id/ipadres"
+    android:ems="10"
+    android:hint="Port"
+    android:inputType="number" />
+
+<EditText
+    android:id="@+id/ipadres"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="14dp"
+    android:layout_marginLeft="18dp"
+    android:ems="10"
+    android:hint="Server IP-adres" />
     
 </RelativeLayout>
   

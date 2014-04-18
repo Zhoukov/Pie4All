@@ -7,6 +7,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
+    <uses-permission android:maxSdkVersion="19" android:name="android.permission.INTERNET"/>
     
     <application
         android:allowBackup="true"
@@ -45,7 +46,12 @@
 		    android:name="com.example.pie4allapp.CustomerInfo"
 		    android:label="@string/app_name" >
 	    </activity>
-		 
+	    
+ <!-- Preferences -->
+ 		<activity
+ 		    android:name="com.example.pie4allapp.Preferences"
+		 	android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
